@@ -1,0 +1,142 @@
+/* ============================================================
+   Vida Mujer — estilos específicos de la página de producto
+   (se carga después de styles.css)
+   ============================================================ */
+
+/* ---------- Línea de tiempo: tu dinero regresa a ti ---------- */
+.linea__intro {
+  max-width: 640px;
+  color: var(--tinta-suave);
+  margin-bottom: 2.2rem;
+}
+.linea__intro strong { color: var(--rojo); font-size: 1.1em; }
+
+.linea {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+  counter-reset: hito;
+}
+.linea__hito {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  padding: 1rem 0.6rem;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s var(--transicion-suave), box-shadow 0.3s ease;
+}
+.linea__hito:hover { transform: translateY(-5px); box-shadow: var(--sombra-hover); }
+.linea__hito::before {
+  content: "";
+  display: block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--rojo);
+  margin: 0 auto 0.6rem;
+  box-shadow: 0 0 0 4px var(--rojo-suave);
+}
+.linea__anio {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tinta-suave);
+}
+.linea__monto {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--tinta);
+}
+.linea__hito--final {
+  background: var(--gradiente-rojo);
+  border-color: transparent;
+}
+.linea__hito--final::before { background: var(--blanco); box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25); }
+.linea__hito--final .linea__anio { color: rgba(255, 255, 255, 0.85); }
+.linea__hito--final .linea__monto { color: var(--blanco); font-size: 2rem; }
+
+.linea__extra { max-width: 640px; }
+.linea__extra .card { margin-bottom: 1.2rem; }
+.linea__extra .card p:last-child { color: var(--tinta); font-size: 1rem; }
+
+.nota-legal {
+  font-size: 0.8rem;
+  color: var(--tinta-suave);
+  opacity: 0.85;
+}
+
+/* ---------- Salud femenina ---------- */
+.salud__grid { display: grid; gap: 2.5rem; align-items: center; }
+.salud__content > p { color: var(--tinta-suave); margin-bottom: 1.4rem; }
+
+.lista-corazon {
+  list-style: none;
+  margin-bottom: 1.8rem;
+}
+.lista-corazon li {
+  position: relative;
+  padding-left: 2.1rem;
+  margin-bottom: 1.1rem;
+  color: var(--tinta-suave);
+}
+.lista-corazon li strong { color: var(--tinta); }
+.lista-corazon li::before {
+  content: "💗";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-size: 1.1rem;
+}
+
+.salud__panel {
+  background:
+    radial-gradient(ellipse 80% 80% at 20% 0%, rgba(180, 36, 49, 0.18), transparent),
+    var(--tinta);
+  color: var(--hueso);
+  border-radius: var(--radio);
+  padding: 2.2rem 1.8rem;
+  box-shadow: var(--sombra-hover);
+}
+.salud__panel-icono { font-size: 2rem; margin-bottom: 0.8rem; }
+.salud__panel-texto {
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+}
+.salud__panel-texto em { color: #F2C7CB; font-style: italic; }
+.salud__panel-firma { font-weight: 700; color: #F2C7CB; }
+
+/* ---------- Lista "es para ti si" ---------- */
+.lista-grande li {
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ============================================================
+   Desktop ≥ 900px
+   ============================================================ */
+@media (min-width: 900px) {
+  .linea { grid-template-columns: repeat(8, 1fr); }
+
+  /* línea conectora entre hitos */
+  .linea__hito:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 1.25rem;
+    right: -0.85rem;
+    width: 0.9rem;
+    height: 2px;
+    background: var(--borde);
+  }
+
+  .salud__grid { grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; }
+  .salud__panel { padding: 2.6rem 2.2rem; }
+}

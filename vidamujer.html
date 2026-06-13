@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vida Mujer · El plan que te protege hoy y te devuelve tu dinero mañana | tutiasegurosmx</title>
+  <meta name="description" content="Vida Mujer es ahorro y protección en un solo plan: recibes dinero en vida cada 2 años, tu familia queda protegida y no estás sola ante un diagnóstico difícil. Asesoría gratis con Flor Armenta.">
+
+  <!-- Open Graph (compartir en WhatsApp / redes) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vida Mujer · Te cuida hoy, te devuelve tu dinero mañana">
+  <meta property="og:description" content="El plan de ahorro y protección diseñado para mujeres. Conócelo y agenda tu asesoría gratuita con Flor Armenta.">
+  <meta property="og:image" content="assets/img/flor-retrato.jpg">
+  <meta property="og:locale" content="es_MX">
+  <!-- TODO: pendiente clienta — actualizar og:url cuando se defina el dominio -->
+
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23B42431'/%3E%3Ctext x='50' y='68' font-size='55' font-family='Georgia' fill='%23FDFBF7' text-anchor='middle'%3Et%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/vidamujer.css">
+
+  <!-- Meta Pixel (Facebook Ads) -->
+  <!-- TODO: pendiente clienta — sustituir TU_PIXEL_ID y descomentar.
+       En esta página además de PageView conviene disparar:
+       fbq('track', 'ViewContent', { content_name: 'Vida Mujer' });
+  -->
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <!-- TODO: pendiente clienta — sustituir por logotipo (PNG/SVG) -->
+      <a href="index.html" class="header__brand">tuti<span>aseguros</span>mx</a>
+      <nav class="header__nav" id="nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="#beneficios">Tu plan</a>
+        <a href="#tu-dinero">Tu dinero</a>
+        <a href="#momentos">Momentos de vida</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <a href="#contacto" class="btn btn--primary btn--sm header__cta">Agenda gratis</a>
+      <button class="header__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="hero__kicker">Vida Mujer</p>
+          <h1 class="hero__title">Te cuida hoy, <em class="resaltado">te devuelve tu dinero</em> mañana</h1>
+          <p class="hero__subtitle">Vida Mujer es ahorro y protección en un solo plan: mientras tu vida sigue, tu plan te entrega dinero. Si algo te pasa, tu familia queda protegida. Y si llega una enfermedad, no la enfrentas sola.</p>
+          <div class="hero__actions">
+            <a href="#contacto" class="btn btn--primary" data-track="Lead">Quiero mi plan Vida Mujer</a>
+            <a href="https://wa.me/526441140495?text=Hola%20Flor%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Vida%20Mujer%20%F0%9F%92%97"
+               class="btn btn--ghost" target="_blank" rel="noopener" data-track="Contact">Pregúntame por WhatsApp</a>
+          </div>
+          <ul class="hero__checks">
+            <li>Recibes dinero en vida, no solo "por si algo pasa"</li>
+            <li>Diseñado para la salud y los momentos de la mujer</li>
+            <li>Empiezas sin exámenes médicos complicados</li>
+          </ul>
+          <p class="hero__trust">Un producto de <strong>Seguros Monterrey New York Life</strong>, contigo de la mano de Flor Armenta</p>
+        </div>
+        <figure class="hero__media">
+          <div class="hero__media-frame" aria-hidden="true"></div>
+          <img src="assets/img/flor-retrato.jpg" alt="Flor Armenta, tu asesora para el plan Vida Mujer" width="660" height="980" fetchpriority="high">
+          <div class="hero__badge" aria-hidden="true">
+            <strong>115%</strong>
+            <span>recibes de regreso a lo largo de tu plan</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Cinta -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Te protege</span><span>✦</span><span>Te ahorra</span><span>✦</span><span>Te acompaña</span><span>✦</span><span>Te celebra</span><span>✦</span>
+        <span>Te protege</span><span>✦</span><span>Te ahorra</span><span>✦</span><span>Te acompaña</span><span>✦</span><span>Te celebra</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- ============ CIFRAS ============ -->
+    <section class="stats" aria-label="Cifras del plan Vida Mujer">
+      <div class="container stats__grid">
+        <div class="stat"><strong data-count="60" data-prefix="+" data-suffix=" mil">+60 mil</strong><span>mujeres en México ya tienen Vida Mujer</span></div>
+        <div class="stat"><strong data-count="115" data-suffix="%">115%</strong><span>de tu protección regresa a ti a lo largo del plan</span></div>
+        <div class="stat"><strong data-count="2" data-prefix="cada " data-suffix=" años">cada 2 años</strong><span>recibes dinero a partir del año 5</span></div>
+        <div class="stat"><strong data-count="30" data-suffix=" min">30 min</strong><span>dura la asesoría gratis donde te lo explico clarito</span></div>
+      </div>
+    </section>
+
+    <!-- ============ QUÉ HACE POR TI ============ -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <p class="section__kicker">¿Qué hace por ti?</p>
+        <h2 class="section__title">Un solo plan, tres promesas para tu vida</h2>
+        <div class="cards cards--3">
+          <article class="card">
+            <div class="card__icon">💗</div>
+            <h3>Mientras vives, recibes</h3>
+            <p>Este plan no es solo "por si algo pasa". A partir del quinto año empieza a regresarte dinero cada dos años — tuyo, para lo que tú quieras: un viaje, tu negocio, tus hijos o simplemente disfrutarlo.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🏡</div>
+            <h3>Si tú faltas, ellos están bien</h3>
+            <p>Si llegaras a faltar durante tu plan, tu familia recibe completa la protección que elegiste. La casa, la escuela de tus hijos y la vida que construiste no se detienen.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🌷</div>
+            <h3>Si te enfermas, no estás sola</h3>
+            <p>Incluye apoyo económico ante cáncer de mama y otros padecimientos de la mujer, además de orientación médica y segunda opinión con especialistas en Estados Unidos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TU DINERO REGRESA A TI ============ -->
+    <section class="section section--cream" id="tu-dinero">
+      <div class="container">
+        <p class="section__kicker">Así regresa tu dinero</p>
+        <h2 class="section__title">Tu plan dura 20 años… y te va premiando en el camino</h2>
+        <p class="linea__intro">A partir del año 5, tu plan te entrega el 5% de tu protección contratada cada dos años. Y al llegar al año 20, recibes el premio mayor: el 80%. Al final habrás recibido el <strong>115%</strong>.</p>
+
+        <ol class="linea">
+          <li class="linea__hito"><span class="linea__anio">Año 5</span><span class="linea__monto">5%</span></li>
+          <li class="linea__hito"><span class="linea__anio">Año 7</span><span class="linea__monto">5%</span></li>
+          <li class="linea__hito"><span class="linea__anio">Año 9</span><span class="linea__monto">5%</span></li>
+          <li class="linea__hito"><span class="linea__anio">Año 11</span><span class="linea__monto">5%</span></li>
+          <li class="linea__hito"><span class="linea__anio">Año 13</span><span class="linea__monto">5%</span></li>
+          <li class="linea__hito"><span class="linea__anio">Año 15</span><span class="linea__monto">5%</span></li>
+          <li class="linea__hito"><span class="linea__anio">Año 17</span><span class="linea__monto">5%</span></li>
+          <li class="linea__hito linea__hito--final"><span class="linea__anio">Año 20</span><span class="linea__monto">80%</span></li>
+        </ol>
+
+        <div class="linea__extra">
+          <div class="card card--destacada">
+            <p class="card__tag">¿Boda o bebé en camino? 💍👶</p>
+            <p>Si entre el cuarto y quinto año de tu plan te casas o se agranda la familia, puedes <strong>adelantar tu primer pago</strong> para celebrarlo. Porque la vida no espera — y tu plan tampoco.</p>
+          </div>
+          <p class="nota-legal">Porcentajes calculados sobre la protección que contrates. Información ilustrativa; los detalles exactos se establecen en las Condiciones Generales de tu póliza y los revisamos juntas en tu asesoría.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SALUD FEMENINA ============ -->
+    <section class="section" id="salud">
+      <div class="container salud__grid">
+        <div class="salud__content">
+          <p class="section__kicker">Pensado para ti</p>
+          <h2 class="section__title">Si llega un diagnóstico difícil, el apoyo llega contigo</h2>
+          <p>Una de nuestras mayores preocupaciones como mujeres es nuestra salud. Vida Mujer lo entiende, por eso tu plan puede incluir:</p>
+          <ul class="lista-corazon">
+            <li><strong>Apoyo económico ante cáncer femenino.</strong> Si te diagnostican cáncer de mama, de ovario o de útero, recibes un pago para enfocarte en lo único importante: sanar. Sin esperar a vender nada, sin pedir prestado.</li>
+            <li><strong>Apoyo en vida, sin costo extra.</strong> Ante un diagnóstico grave como infarto, embolia o insuficiencia renal, tu plan puede adelantarte parte de tu protección cuando más la necesitas.</li>
+            <li><strong>Segunda opinión médica en Estados Unidos, sin costo extra.</strong> Orientación para elegir médicos y hospitales, trámites y hasta traductores, si quieres confirmar un diagnóstico con especialistas.</li>
+          </ul>
+          <a href="#contacto" class="btn btn--primary">Quiero conocer mi protección</a>
+        </div>
+        <aside class="salud__panel" aria-label="Dato importante">
+          <p class="salud__panel-icono" aria-hidden="true">🎀</p>
+          <p class="salud__panel-texto">"Mi trabajo es que si un día recibes una noticia difícil, el dinero sea lo único de lo que <em>no</em> tengas que preocuparte."</p>
+          <p class="salud__panel-firma">— Flor Armenta</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ MOMENTOS DE VIDA (OPCIONALES) ============ -->
+    <section class="section section--cream" id="momentos">
+      <div class="container">
+        <p class="section__kicker">Tu plan crece contigo</p>
+        <h2 class="section__title">Protecciones extra para cada momento de tu vida</h2>
+        <p class="linea__intro">Tu plan base ya hace mucho. Pero si tu vida pide más, puedes sumarle protecciones a tu medida:</p>
+        <div class="cards cards--3">
+          <article class="card">
+            <div class="card__icon">🤰</div>
+            <h3>Maternidad con respaldo</h3>
+            <p>Apoyo económico ante complicaciones del embarazo, del parto o de salud de tu bebé al nacer. Para que esa etapa sea de ilusión, no de cuentas.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">💼</div>
+            <h3>Tu ingreso, protegido</h3>
+            <p>Si una enfermedad o accidente te impide trabajar por un tiempo, recibes una mensualidad hasta por 12 meses. Tu quincena no se detiene contigo en cama.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">💞</div>
+            <h3>Si tu esposo llegara a faltar</h3>
+            <p>Una protección adicional pensada para ese momento tan duro: recibes un respaldo económico independiente para sostener tu hogar y rehacer el camino.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">👨‍👩‍👧</div>
+            <h3>Protege también a los tuyos</h3>
+            <p>Puedes extender protección a tu esposo, tus papás o tus hijos dentro del mismo plan. Una sola decisión que cuida a toda tu familia.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🐷</div>
+            <h3>Ahorra más cuando quieras</h3>
+            <p>¿Te llegó un bono, un aguinaldo, una venta buena? Puedes hacer aportaciones extra en cualquier momento para que tu ahorro y tu protección crezcan.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🕊️</div>
+            <h3>Tranquilidad ante lo inesperado</h3>
+            <p>Coberturas adicionales por accidente o invalidez: si la vida cambia de golpe, tu plan se queda firme — incluso puede pagarse solo mientras te recuperas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PARA QUIÉN ES ============ -->
+    <section class="section" id="para-ti">
+      <div class="container container--narrow">
+        <p class="section__kicker">¿Es para ti?</p>
+        <h2 class="section__title">Vida Mujer es para ti si…</h2>
+        <ul class="hero__checks lista-grande">
+          <li>Tienes entre 18 y 55 años y quieres que tu esfuerzo se convierta en patrimonio</li>
+          <li>Te cuesta ahorrar "por tu cuenta" y necesitas un plan con disciplina incluida</li>
+          <li>Quieres proteger a tu familia sin sentir que el dinero se va a un cajón</li>
+          <li>Prefieres prevenir hoy que pedir prestado mañana</li>
+          <li>Quieres que alguien te lo explique con peras y manzanas, sin presión</li>
+        </ul>
+        <div class="section__center">
+          <a href="#contacto" class="btn btn--primary">Sí, quiero mi asesoría gratuita</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--cream" id="faq">
+      <div class="container container--narrow">
+        <p class="section__kicker">Preguntas frecuentes</p>
+        <h2 class="section__title">Lo que seguro te estás preguntando</h2>
+        <div class="faq">
+          <details>
+            <summary>¿Tengo que enfermarme o que pase algo malo para recibir dinero?</summary>
+            <p>No, y eso es lo más bonito de este plan: el dinero te llega en vida, simplemente por seguir adelante. A partir del año 5 recibes pagos cada dos años, y al año 20 recibes la entrega más grande. Las protecciones por enfermedad son un extra, no la condición.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta?</summary>
+            <p>Depende de tu edad, de la protección que elijas y de tu presupuesto. Se adapta a ti, no al revés. En tu asesoría gratuita armamos números reales para tu caso — sin compromiso de contratar.</p>
+          </details>
+          <details>
+            <summary>¿Me van a pedir exámenes médicos?</summary>
+            <p>Para empezar tu plan, en la mayoría de los casos no necesitas exámenes médicos adicionales — un cuestionario de salud honesto suele ser suficiente. Tu caso lo confirmamos juntas en la asesoría.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa si un día ya no puedo seguir pagando?</summary>
+            <p>La vida da vueltas, lo sé. Por eso el plan tiene opciones para proteger lo que ya construiste si necesitas hacer una pausa. Lo importante es avisarme a tiempo: juntas encontramos la mejor salida sin que pierdas tu esfuerzo.</p>
+          </details>
+          <details>
+            <summary>¿Mi ahorro pierde valor con el tiempo?</summary>
+            <p>Tu plan se contrata en dólares o en UDIS (unidades que se ajustan con la inflación), justamente para que lo que recibas mañana siga valiendo. Te explico la diferencia entre ambas con ejemplos claros en tu asesoría.</p>
+          </details>
+          <details>
+            <summary>¿Y si mejor ahorro por mi cuenta?</summary>
+            <p>¡Ahorra también por tu cuenta! Pero pregúntate con honestidad: ¿tu cuenta de ahorro le entrega dinero a tu familia si tú faltas? ¿Te apoya ante un cáncer? ¿Te obliga cariñosamente a ser constante? Eso es lo que un plan como este hace y una alcancía no.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL + FORMULARIO ============ -->
+    <section class="section contacto" id="contacto">
+      <div class="container contacto__grid">
+        <div class="contacto__content">
+          <h2 class="section__title">Hablemos de tu plan, de mujer a mujer</h2>
+          <p>Déjame tus datos y te contacto en menos de 24 horas. En 30 minutos te explico Vida Mujer con tus números, tus metas y tu presupuesto — clarito y sin compromiso.</p>
+          <ul class="hero__checks">
+            <li>Asesoría 100% gratuita, por videollamada o presencial</li>
+            <li>Te llevas tu propuesta personalizada, decidas lo que decidas</li>
+            <li>Tus datos están seguros: jamás los comparto</li>
+          </ul>
+          <!-- TODO: pendiente clienta — sustituir por link real de Calendly -->
+          <p class="contacto__alt">¿Prefieres elegir fecha y hora ahora mismo?<br>
+            <a href="#" class="contacto__calendly" data-calendly>Agenda directo en mi calendario →</a>
+          </p>
+        </div>
+        <form class="form" id="leadForm" novalidate>
+          <h3 class="form__title">Quiero conocer Vida Mujer</h3>
+          <div class="form__field">
+            <label for="nombre">Nombre*</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="¿Cómo te llamas?" required>
+          </div>
+          <div class="form__field">
+            <label for="email">Correo electrónico*</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="form__field">
+            <label for="whatsapp">WhatsApp*</label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="numeric" placeholder="10 dígitos" required>
+          </div>
+          <div class="form__field">
+            <label for="producto">¿Qué te interesa más?</label>
+            <select id="producto" name="producto">
+              <option value="Vida Mujer" selected>Vida Mujer</option>
+              <option value="Aún no lo sé">Aún no lo sé, quiero orientación</option>
+              <option value="Plan de Retiro">Plan de Retiro</option>
+              <option value="Gastos Médicos">Gastos Médicos Mayores</option>
+              <option value="Segubeca">Segubeca (educación de mis hijos)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Quiero mi asesoría gratuita</button>
+          <p class="form__privacy">Al enviar aceptas ser contactada por Flor Armenta. Tus datos nunca se comparten con terceros.</p>
+          <p class="form__success" id="formSuccess" hidden>¡Listo! Recibí tus datos. Te contacto en menos de 24 horas. 💌</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <p class="footer__brand">tuti<span>aseguros</span>mx</p>
+        <p>Flor de María Armenta Osuna<br>Asesora profesional de Seguros Monterrey New York Life</p>
+      </div>
+      <div>
+        <p class="footer__heading">Contacto</p>
+        <p><a href="mailto:florsegurosmonterrey@gmail.com">florsegurosmonterrey@gmail.com</a><br>
+        <a href="https://wa.me/526441140495" target="_blank" rel="noopener">WhatsApp: 644 114 0495</a></p>
+      </div>
+      <div>
+        <p class="footer__heading">Sígueme</p>
+        <p class="footer__social">
+          <a href="https://www.tiktok.com/@tutiasegurosmx" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.instagram.com/tutiasegurosmx/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61562341318242" target="_blank" rel="noopener">Facebook</a>
+        </p>
+      </div>
+    </div>
+    <div class="container footer__legal">
+      <p>Vida Mujer® es un producto de Seguros Monterrey New York Life, S.A. de C.V. Esta página es informativa y no constituye una oferta ni garantía de contratación. Las coberturas, porcentajes, edades de contratación y beneficios descritos son ilustrativos y están sujetos a las Condiciones Generales del producto y a las políticas de suscripción de la aseguradora.</p>
+      <p>© 2026 tutiasegurosmx · Hecho por <a href="https://ikigaiasesores.vercel.app" target="_blank" rel="noopener">Ikigai Asesores</a></p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/526441140495?text=Hola%20Flor%2C%20estoy%20viendo%20la%20p%C3%A1gina%20de%20Vida%20Mujer%20y%20quiero%20mi%20asesor%C3%ADa%20gratuita%20%F0%9F%92%97"
+     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp" data-track="Contact">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
+      <path d="M16 2.7C8.7 2.7 2.7 8.7 2.7 16c0 2.5.7 4.9 2 7L2.7 29.3l6.5-1.9c2 1.2 4.3 1.8 6.8 1.8 7.3 0 13.3-6 13.3-13.3S23.3 2.7 16 2.7zm0 24.2c-2.2 0-4.3-.6-6.1-1.7l-.4-.3-3.9 1.1 1.1-3.8-.3-.4a10.8 10.8 0 0 1-1.7-5.8C4.7 9.9 9.8 4.9 16 4.9S27.3 9.9 27.3 16 22.2 26.9 16 26.9zm6-8.1c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
