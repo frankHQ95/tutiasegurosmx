@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segubeca · El ahorro para su universidad que llega, pase lo que pase | tutiasegurosmx</title>
+  <meta name="description" content="Una carrera universitaria privada en México puede costar más de $1.5 millones. Segubeca garantiza el capital para la universidad de tu hijo a sus 18 años — incluso si tú llegaras a faltar. Asesoría gratis con Flor Armenta.">
+
+  <!-- Open Graph (compartir en WhatsApp / redes) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Su universidad va a llegar. ¿Y el dinero?">
+  <meta property="og:description" content="Segubeca: el ahorro garantizado para la universidad de tu hijo, que se termina de pagar solo si tú faltas. Agenda tu asesoría gratuita con Flor Armenta.">
+  <meta property="og:image" content="assets/img/flor-hero.jpg">
+  <meta property="og:locale" content="es_MX">
+  <!-- TODO: pendiente clienta — actualizar og:url cuando se defina el dominio -->
+
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23B42431'/%3E%3Ctext x='50' y='68' font-size='55' font-family='Georgia' fill='%23FDFBF7' text-anchor='middle'%3Et%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/segubeca.css">
+
+  <!-- Meta Pixel (Facebook Ads) -->
+  <!-- TODO: pendiente clienta — sustituir TU_PIXEL_ID y descomentar.
+       En esta página además de PageView conviene disparar:
+       fbq('track', 'ViewContent', { content_name: 'Segubeca' });
+  -->
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <!-- TODO: pendiente clienta — sustituir por logotipo (PNG/SVG) -->
+      <a href="index.html" class="header__brand">tuti<span>aseguros</span>mx</a>
+      <nav class="header__nav" id="nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="#costos">Lo que cuesta</a>
+        <a href="#que-es">Qué es Segubeca</a>
+        <a href="#garantia">La garantía</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <a href="#contacto" class="btn btn--primary btn--sm header__cta">Agenda gratis</a>
+      <button class="header__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="hero__kicker">Segubeca</p>
+          <h1 class="hero__title">Su universidad va a llegar. El dinero, <em class="resaltado">tú lo garantizas hoy</em></h1>
+          <p class="hero__subtitle">Segubeca convierte lo que ahorras cada mes en un capital garantizado: el día que tu hijo cumpla 18, el dinero de su universidad está ahí. Estés tú para verlo… o no.</p>
+          <div class="hero__actions">
+            <a href="#contacto" class="btn btn--primary" data-track="Lead">Quiero asegurar su futuro</a>
+            <a href="https://wa.me/526441140495?text=Hola%20Flor%2C%20quiero%20informaci%C3%B3n%20sobre%20Segubeca%20para%20la%20universidad%20de%20mi%20hijo%20%F0%9F%8E%93"
+               class="btn btn--ghost" target="_blank" rel="noopener" data-track="Contact">Pregúntame por WhatsApp</a>
+          </div>
+          <ul class="hero__checks">
+            <li>Capital garantizado, no depende de los mercados</li>
+            <li>Si tú faltas, el plan se termina de pagar solo</li>
+            <li>Empiezas cuando tu hijo tiene entre 0 y 13 años</li>
+          </ul>
+          <p class="hero__trust">Un producto de <strong>Seguros Monterrey New York Life</strong>, contigo de la mano de Flor Armenta</p>
+        </div>
+        <figure class="hero__media">
+          <div class="hero__media-frame" aria-hidden="true"></div>
+          <img src="assets/img/flor-hero.jpg" alt="Flor Armenta, tu asesora para el plan educativo Segubeca" width="660" height="990" fetchpriority="high">
+          <div class="hero__badge" aria-hidden="true">
+            <strong>A sus 18</strong>
+            <span>su universidad, pagada</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Cinta -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Su universidad</span><span>✦</span><span>Garantizada</span><span>✦</span><span>Pase lo que pase</span><span>✦</span><span>Desde hoy</span><span>✦</span>
+        <span>Su universidad</span><span>✦</span><span>Garantizada</span><span>✦</span><span>Pase lo que pase</span><span>✦</span><span>Desde hoy</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- ============ CIFRAS ============ -->
+    <section class="stats" aria-label="Cifras sobre el costo de la universidad">
+      <div class="container stats__grid">
+        <div class="stat"><strong data-count="200" data-prefix="$" data-suffix=" mil">$200 mil</strong><span>puede costar UN solo semestre en una universidad top*</span></div>
+        <div class="stat"><strong data-count="20" data-prefix="+" data-suffix="%">+20%</strong><span>extra cuesta la vida universitaria: libros, materiales, transporte</span></div>
+        <div class="stat"><strong data-count="160" data-prefix="$" data-suffix=" millones">$160 millones</strong><span>ha entregado la aseguradora a niños que perdieron a papá o mamá*</span></div>
+        <div class="stat"><strong data-count="13" data-prefix="0 a " data-suffix=" años">0 a 13 años</strong><span>la edad de tu hijo para arrancar su plan</span></div>
+      </div>
+    </section>
+
+    <!-- ============ LO QUE CUESTA (DOLOR CON DATOS REALES) ============ -->
+    <section class="section" id="costos">
+      <div class="container">
+        <p class="section__kicker">Hablemos con números reales</p>
+        <h2 class="section__title">Esto cuesta hoy una carrera universitaria en México</h2>
+        <div class="costos__grid">
+          <article class="card costo">
+            <p class="costo__nivel">Universidades de prestigio</p>
+            <p class="costo__ejemplos">Tec de Monterrey · Ibero · Anáhuac</p>
+            <p class="costo__semestre"><strong>$145–200 mil</strong><span>por semestre</span></p>
+            <p class="costo__total">Carrera completa: <strong>$1.3 a $1.8 millones</strong></p>
+          </article>
+          <article class="card costo">
+            <p class="costo__nivel">Universidades privadas medias</p>
+            <p class="costo__ejemplos">UVM · UNITEC y similares</p>
+            <p class="costo__semestre"><strong>$60–80 mil</strong><span>por semestre</span></p>
+            <p class="costo__total">Carrera completa: <strong>$550 a 700 mil</strong></p>
+          </article>
+          <article class="card costo costo--alerta">
+            <p class="costo__nivel">Y eso no es todo…</p>
+            <ul class="costo__lista">
+              <li>Suma <strong>+20%</strong> en libros, materiales y transporte</li>
+              <li>Las colegiaturas <strong>suben cada año</strong> — históricamente más que la inflación</li>
+              <li>Carreras como medicina pueden costar <strong>mucho más</strong></li>
+            </ul>
+          </article>
+        </div>
+        <p class="costos__punch">Tu hijo llega a los 18 en una fecha exacta que ya conoces. La pregunta no es <em>cuándo</em> — es <em>con qué</em>. 18 años se van rápido… pero también alcanzan para construir el capital completo, si empiezas hoy.</p>
+        <p class="nota-legal">*Rangos de colegiaturas 2025-2026 según comparativas públicas (adn40, Telediario, cuantomecuesta.com). Varían por campus, carrera y carga académica; muchas universidades ofrecen becas. Cifras ilustrativas para dimensionar la meta de ahorro.</p>
+      </div>
+    </section>
+
+    <!-- ============ QUÉ ES SEGUBECA ============ -->
+    <section class="section section--cream" id="que-es">
+      <div class="container">
+        <p class="section__kicker">La solución</p>
+        <h2 class="section__title">Segubeca: tres promesas para el futuro de tu hijo</h2>
+        <div class="cards cards--3">
+          <article class="card">
+            <div class="card__icon">🎓</div>
+            <h3>El dinero llega a sus 18, garantizado</h3>
+            <p>No depende de cómo amanezcan los mercados ni de la economía: el capital que pactes hoy se entrega cuando tu hijo cumpla 18 años. Punto.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🛡️</div>
+            <h3>Si tú faltas, se paga solo</h3>
+            <p>Si llegaras a faltar o a sufrir una invalidez, la aseguradora cubre las aportaciones que falten. Tu hijo recibe su ahorro completo a los 18 — tu plan no muere contigo.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">💸</div>
+            <h3>Su "mesada universitaria"</h3>
+            <p>Al cumplir 18, tu hijo puede recibir todo en un pago o en mensualidades durante los 4 años de carrera, generando rendimientos garantizados mientras estudia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LA GARANTÍA (EMOCIONAL + PRUEBA) ============ -->
+    <section class="section" id="garantia">
+      <div class="container garantia__grid">
+        <div class="garantia__content">
+          <p class="section__kicker">Lo que lo hace único</p>
+          <h2 class="section__title">El único ahorro que se termina de pagar solo</h2>
+          <p>Una cuenta de banco, una tanda o los CETES son ahorro — pero tienen un punto débil: <strong>dependen de que tú sigas aquí para seguir aportando</strong>. Si algo te pasa, el ahorro se congela donde quedó.</p>
+          <p>Segubeca es diferente. Es ahorro <em>con un seguro de vida abrazándolo</em>:</p>
+          <ul class="lista-corazon">
+            <li><strong>Si tú estás</strong>: aportas mes a mes y a los 18 de tu hijo el capital se entrega completo.</li>
+            <li><strong>Si tú faltas o sufres una invalidez</strong>: la aseguradora paga las aportaciones restantes, tu familia recibe además una protección por tu fallecimiento, y a los 18 tu hijo recibe su ahorro completo, como lo planeaste.</li>
+            <li><strong>En ambos casos</strong>: tu hijo entra a la universidad. Esa es la promesa.</li>
+          </ul>
+          <a href="#contacto" class="btn btn--primary">Quiero esa tranquilidad</a>
+        </div>
+        <aside class="garantia__panel" aria-label="Cifra real de respaldo">
+          <p class="garantia__panel-cifra">$160 millones</p>
+          <p class="garantia__panel-texto">es lo que Seguros Monterrey New York Life ha entregado en los últimos años a <strong>256 niños</strong> que perdieron a papá o mamá: sus planes quedaron exentos de pago y su ahorro universitario llegó completo a sus 18 años.</p>
+          <p class="garantia__panel-firma">Eso es lo que contratas: una promesa que se cumple.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ BENEFICIOS EXTRA ============ -->
+    <section class="section section--cream" id="extras">
+      <div class="container">
+        <p class="section__kicker">Y además</p>
+        <h2 class="section__title">Detalles que hacen grande a este plan</h2>
+        <div class="cards cards--3">
+          <article class="card">
+            <div class="card__icon">👫</div>
+            <h3>Protege a papá y mamá juntos</h3>
+            <p>Con la opción mancomunada, ambos quedan protegidos en la misma póliza, cada uno con su propio monto de protección.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">💼</div>
+            <h3>Respaldo si pierdes tu empleo</h3>
+            <p>Con la cobertura de desempleo, el plan puede cubrir tus aportaciones hasta por 3 meses mientras te reincorporas. La universidad de tu hijo no se pausa contigo.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">💵</div>
+            <h3>Ahorro que no pierde valor</h3>
+            <p>Tu plan se contrata en dólares o en UDIs (que se ajustan con la inflación), para que lo que hoy alcanza para una carrera… siga alcanzando en 15 años.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🧾</div>
+            <h3>Sin impuestos al final</h3>
+            <p>El ahorro se entrega sin retención de impuestos al vencimiento del plan. Lo que se acumuló, se entrega.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🔑</div>
+            <h3>Su primer seguro, heredado</h3>
+            <p>Al crecer, tu hijo podrá contratar su propio seguro de vida sin exámenes médicos, sin importar su estado de salud. Le heredas protección, no solo dinero.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🌎</div>
+            <h3>Apoyo médico incluido</h3>
+            <p>Sin costo extra: anticipo ante enfermedad terminal, orientación médica en Estados Unidos y un anticipo para gastos funerarios que protege a tu familia en el peor momento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PARA QUIÉN ============ -->
+    <section class="section" id="para-ti">
+      <div class="container container--narrow">
+        <p class="section__kicker">¿Es para ti?</p>
+        <h2 class="section__title">Segubeca es para ti si…</h2>
+        <ul class="hero__checks lista-grande">
+          <li>Tu hijo o hija tiene entre 0 y 13 años (entre más pequeño, más ligera la aportación mensual)</li>
+          <li>Sueñas con darle una buena universidad sin hipotecar tu tranquilidad a los 50</li>
+          <li>No quieres que su futuro dependa de préstamos, de la suerte o de "ver cómo le hacemos"</li>
+          <li>Quieres que tu amor por tu hijo quede protegido incluso si tú no estás</li>
+        </ul>
+        <div class="section__center">
+          <a href="#contacto" class="btn btn--primary">Calcular el plan para mi hijo, gratis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--cream" id="faq">
+      <div class="container container--narrow">
+        <p class="section__kicker">Preguntas frecuentes</p>
+        <h2 class="section__title">Lo que toda mamá y papá me preguntan</h2>
+        <div class="faq">
+          <details>
+            <summary>¿A qué edad de mi hijo conviene empezar?</summary>
+            <p>Se puede contratar desde que nace y hasta los 13 años. Entre más pequeño empieces, más años tienes para construir el capital — y más ligera es la aportación mensual. Con un recién nacido, el tiempo juega 100% a tu favor.</p>
+          </details>
+          <details>
+            <summary>¿Por qué no mejor una cuenta de ahorro o CETES?</summary>
+            <p>Ahorra también ahí si puedes — pero hazte una pregunta: si tú faltaras mañana, ¿quién seguiría depositando? Segubeca es el único tipo de ahorro que se termina de pagar solo si tú no estás. Además se contrata en dólares o UDIs y el monto final está garantizado por contrato.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto necesito ahorrar?</summary>
+            <p>Depende de la universidad que sueñas para tu hijo: no es lo mismo apuntar a una privada media (~$550–700 mil la carrera) que al Tec o la Ibero ($1.3–1.8 millones). En tu asesoría definimos la meta con números reales y la convertimos en una aportación mensual que sí puedas sostener.</p>
+          </details>
+          <details>
+            <summary>¿Y si pierdo mi trabajo y no puedo pagar un tiempo?</summary>
+            <p>Existe una cobertura de desempleo que puede cubrir tus aportaciones hasta por 3 meses. Y si la situación se alarga, hay opciones para proteger lo construido — lo importante es avisarme a tiempo para cuidar tu plan.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa si mi hijo decide no ir a la universidad?</summary>
+            <p>El dinero es suyo de cualquier forma: a los 18 se entrega el capital completo, en un pago o en mensualidades. Si no lo usa en colegiaturas, será el mejor arranque de vida que pueda tener: un negocio, un posgrado después, su primer patrimonio.</p>
+          </details>
+          <details>
+            <summary>¿El dinero que recibe paga impuestos?</summary>
+            <p>No: al vencimiento del plan, el ahorro se entrega sin retención de impuestos. Lo acumulado llega completo a su destino — la educación de tu hijo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL + FORMULARIO ============ -->
+    <section class="section contacto" id="contacto">
+      <div class="container contacto__grid">
+        <div class="contacto__content">
+          <h2 class="section__title">El mejor regalo no se envuelve. Se garantiza.</h2>
+          <p>Déjame tus datos y te contacto en menos de 24 horas. En 30 minutos calculamos la meta para la universidad que sueñas para tu hijo y la aportación mensual que la hace posible — gratis y sin compromiso.</p>
+          <ul class="hero__checks">
+            <li>Cálculo personalizado según la universidad que elijas</li>
+            <li>Por videollamada o presencial, como prefieras</li>
+            <li>Tus datos están seguros: jamás los comparto</li>
+          </ul>
+          <!-- TODO: pendiente clienta — sustituir por link real de Calendly -->
+          <p class="contacto__alt">¿Prefieres elegir fecha y hora ahora mismo?<br>
+            <a href="#" class="contacto__calendly" data-calendly>Agenda directo en mi calendario →</a>
+          </p>
+        </div>
+        <form class="form" id="leadForm" novalidate>
+          <h3 class="form__title">Quiero asegurar su universidad</h3>
+          <div class="form__field">
+            <label for="nombre">Nombre*</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="¿Cómo te llamas?" required>
+          </div>
+          <div class="form__field">
+            <label for="email">Correo electrónico*</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="form__field">
+            <label for="whatsapp">WhatsApp*</label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="numeric" placeholder="10 dígitos" required>
+          </div>
+          <div class="form__field">
+            <label for="producto">¿Qué te interesa más?</label>
+            <select id="producto" name="producto">
+              <option value="Segubeca" selected>Segubeca (educación de mis hijos)</option>
+              <option value="Aún no lo sé">Aún no lo sé, quiero orientación</option>
+              <option value="Vida Mujer">Vida Mujer</option>
+              <option value="Plan de Retiro">Plan de Retiro</option>
+              <option value="Gastos Médicos">Gastos Médicos Mayores</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Quiero mi asesoría gratuita</button>
+          <p class="form__privacy">Al enviar aceptas ser contactada por Flor Armenta. Tus datos nunca se comparten con terceros.</p>
+          <p class="form__success" id="formSuccess" hidden>¡Listo! Recibí tus datos. Te contacto en menos de 24 horas. 💌</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <p class="footer__brand">tuti<span>aseguros</span>mx</p>
+        <p>Flor de María Armenta Osuna<br>Asesora profesional de Seguros Monterrey New York Life</p>
+      </div>
+      <div>
+        <p class="footer__heading">Contacto</p>
+        <p><a href="mailto:florsegurosmonterrey@gmail.com">florsegurosmonterrey@gmail.com</a><br>
+        <a href="https://wa.me/526441140495" target="_blank" rel="noopener">WhatsApp: 644 114 0495</a></p>
+      </div>
+      <div>
+        <p class="footer__heading">Sígueme</p>
+        <p class="footer__social">
+          <a href="https://www.tiktok.com/@tutiasegurosmx" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.instagram.com/tutiasegurosmx/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61562341318242" target="_blank" rel="noopener">Facebook</a>
+        </p>
+      </div>
+    </div>
+    <div class="container footer__legal">
+      <p>SeguBeca® es un producto de Seguros Monterrey New York Life, S.A. de C.V. Esta página es informativa y no constituye una oferta ni garantía de contratación. Coberturas, montos, edades y beneficios sujetos a las Condiciones Generales del producto y a las políticas de suscripción de la aseguradora. Los costos universitarios mostrados provienen de comparativas públicas 2025-2026 y son ilustrativos. La cifra de pagos a menores beneficiarios corresponde a información publicada por la aseguradora.</p>
+      <p>© 2026 tutiasegurosmx · Hecho por <a href="https://ikigaiasesores.vercel.app" target="_blank" rel="noopener">Ikigai Asesores</a></p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/526441140495?text=Hola%20Flor%2C%20estoy%20viendo%20la%20p%C3%A1gina%20de%20Segubeca%20y%20quiero%20mi%20asesor%C3%ADa%20gratuita%20%F0%9F%8E%93"
+     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp" data-track="Contact">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
+      <path d="M16 2.7C8.7 2.7 2.7 8.7 2.7 16c0 2.5.7 4.9 2 7L2.7 29.3l6.5-1.9c2 1.2 4.3 1.8 6.8 1.8 7.3 0 13.3-6 13.3-13.3S23.3 2.7 16 2.7zm0 24.2c-2.2 0-4.3-.6-6.1-1.7l-.4-.3-3.9 1.1 1.1-3.8-.3-.4a10.8 10.8 0 0 1-1.7-5.8C4.7 9.9 9.8 4.9 16 4.9S27.3 9.9 27.3 16 22.2 26.9 16 26.9zm6-8.1c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
