@@ -1,0 +1,134 @@
+/* ============================================================
+   Segubeca — estilos específicos de la página de producto
+   (se carga después de styles.css)
+   ============================================================ */
+
+.nota-legal {
+  font-size: 0.8rem;
+  color: var(--tinta-suave);
+  opacity: 0.85;
+  margin-top: 1.5rem;
+  max-width: 720px;
+}
+
+.lista-corazon {
+  list-style: none;
+  margin-bottom: 1.8rem;
+}
+.lista-corazon li {
+  position: relative;
+  padding-left: 2.1rem;
+  margin-bottom: 1.1rem;
+  color: var(--tinta-suave);
+}
+.lista-corazon li strong { color: var(--tinta); }
+.lista-corazon li::before {
+  content: "🎓";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-size: 1.1rem;
+}
+
+.lista-grande li {
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- Costos universitarios ---------- */
+.costos__grid { display: grid; gap: 1.2rem; margin-bottom: 2rem; }
+
+.costo__nivel {
+  font-family: var(--fuente-titulos);
+  font-size: 1.2rem !important;
+  color: var(--tinta) !important;
+  margin-bottom: 0.2rem;
+}
+.costo__ejemplos {
+  font-size: 0.82rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--rojo) !important;
+  margin-bottom: 1rem;
+}
+.costo__semestre { margin-bottom: 0.8rem; }
+.costo__semestre strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 2.1rem;
+  color: var(--tinta);
+  line-height: 1.1;
+}
+.costo__semestre span { font-size: 0.85rem; color: var(--tinta-suave); }
+.costo__total {
+  border-top: 1px dashed var(--borde);
+  padding-top: 0.8rem;
+  font-size: 0.95rem !important;
+}
+.costo__total strong { color: var(--rojo); }
+
+.costo--alerta { background: var(--crema); }
+.costo__lista { list-style: none; margin-top: 0.4rem; }
+.costo__lista li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+}
+.costo__lista li::before {
+  content: "⚠";
+  position: absolute;
+  left: 0;
+  color: var(--rojo);
+}
+.costo__lista li strong { color: var(--tinta); }
+
+.costos__punch {
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+  line-height: 1.45;
+  max-width: 720px;
+  color: var(--tinta);
+}
+.costos__punch em { color: var(--rojo); }
+
+/* ---------- La garantía ---------- */
+.garantia__grid { display: grid; gap: 2.5rem; align-items: center; }
+.garantia__content > p { color: var(--tinta-suave); margin-bottom: 1rem; }
+.garantia__content > p strong { color: var(--tinta); }
+.garantia__content > p em { color: var(--rojo); font-style: italic; }
+
+.garantia__panel {
+  background:
+    radial-gradient(ellipse 80% 80% at 20% 0%, rgba(180, 36, 49, 0.2), transparent),
+    var(--tinta);
+  color: var(--hueso);
+  border-radius: var(--radio);
+  padding: 2.2rem 1.8rem;
+  box-shadow: var(--sombra-hover);
+}
+.garantia__panel-cifra {
+  font-family: var(--fuente-titulos);
+  font-size: 2.6rem;
+  color: #F2C7CB;
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+}
+.garantia__panel-texto { margin-bottom: 1.2rem; opacity: 0.95; }
+.garantia__panel-texto strong { color: #F2C7CB; }
+.garantia__panel-firma {
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  color: #F2C7CB;
+}
+
+/* ============================================================
+   Desktop ≥ 900px
+   ============================================================ */
+@media (min-width: 900px) {
+  .costos__grid { grid-template-columns: repeat(3, 1fr); }
+  .garantia__grid { grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; }
+  .garantia__panel { padding: 2.6rem 2.2rem; }
+}
