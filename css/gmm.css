@@ -1,0 +1,171 @@
+/* ============================================================
+   Gastos Médicos Mayores — estilos específicos de la página
+   (se carga después de styles.css)
+   ============================================================ */
+
+/* ---------- Intro de sección ---------- */
+.gmm-intro {
+  max-width: 660px;
+  color: var(--tinta-suave);
+  margin-bottom: 2.2rem;
+}
+.gmm-intro strong { color: var(--rojo); }
+
+.nota-legal {
+  font-size: 0.8rem;
+  color: var(--tinta-suave);
+  opacity: 0.85;
+  margin-top: 1.4rem;
+  max-width: 760px;
+}
+
+/* ---------- Costos reales (educar sobre el riesgo) ---------- */
+.costos {
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+.costo {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-left: 4px solid var(--rojo);
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s var(--transicion-suave), box-shadow 0.3s ease;
+}
+.costo:hover { transform: translateX(5px); box-shadow: var(--sombra-hover); }
+.costo__monto {
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--rojo);
+  white-space: nowrap;
+}
+.costo__label { color: var(--tinta); font-weight: 600; }
+.costo__sub { width: 100%; font-size: 0.88rem; color: var(--tinta-suave); }
+
+/* ---------- Comparación: sin seguro vs con seguro ---------- */
+.compara {
+  display: grid;
+  gap: 1.4rem;
+}
+.compara__col {
+  border-radius: var(--radio);
+  padding: 1.8rem 1.6rem;
+  box-shadow: var(--sombra);
+}
+.compara__col--sin {
+  background: var(--tinta);
+  color: var(--hueso);
+}
+.compara__col--con {
+  background:
+    radial-gradient(ellipse 90% 70% at 100% 0%, rgba(180, 36, 49, 0.16), transparent),
+    var(--blanco);
+  border: 2px solid var(--rojo);
+}
+.compara__title {
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.compara__col--con .compara__title { color: var(--rojo); }
+.compara__list { list-style: none; display: grid; gap: 0.85rem; }
+.compara__list li { position: relative; padding-left: 1.9rem; line-height: 1.45; }
+.compara__col--sin .compara__list li { color: rgba(253, 251, 247, 0.85); }
+.compara__col--sin .compara__list li::before {
+  content: "✕";
+  position: absolute; left: 0; top: 0;
+  font-weight: 700;
+  color: #F2A9B0;
+}
+.compara__col--con .compara__list li { color: var(--tinta); }
+.compara__col--con .compara__list li::before {
+  content: "✓";
+  position: absolute; left: 0; top: 0;
+  font-weight: 700;
+  color: var(--rojo);
+}
+
+/* ---------- Split imagen + texto ---------- */
+.gmm-split { display: grid; gap: 2.4rem; align-items: center; }
+.gmm-split__content > p { color: var(--tinta-suave); margin-bottom: 1.2rem; }
+.gmm-split__media {
+  position: relative;
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra-hover);
+}
+.gmm-split__media img { width: 100%; height: 100%; object-fit: cover; }
+.gmm-split--reverse .gmm-split__media { order: -1; }
+
+.lista-check { list-style: none; display: grid; gap: 1rem; margin-bottom: 1.8rem; }
+.lista-check li { position: relative; padding-left: 2.1rem; color: var(--tinta-suave); }
+.lista-check li strong { color: var(--tinta); }
+.lista-check li::before {
+  content: "🛡️";
+  position: absolute; left: 0; top: 0.05rem;
+  font-size: 1.05rem;
+}
+
+/* ---------- Panel de cita / cierre emocional ---------- */
+.gmm-cita {
+  background:
+    radial-gradient(ellipse 80% 80% at 20% 0%, rgba(180, 36, 49, 0.20), transparent),
+    var(--tinta);
+  color: var(--hueso);
+  border-radius: var(--radio);
+  padding: 2.4rem 2rem;
+  box-shadow: var(--sombra-hover);
+  text-align: center;
+}
+.gmm-cita__texto {
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+}
+.gmm-cita__texto em { color: #F2C7CB; font-style: italic; }
+.gmm-cita__firma { font-weight: 700; color: #F2C7CB; }
+
+/* ---------- Glosario humano (deducible/coaseguro/suma) ---------- */
+.glosario { display: grid; gap: 1rem; }
+.glosario__item {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: var(--sombra);
+}
+.glosario__term {
+  font-family: var(--fuente-titulos);
+  font-size: 1.1rem;
+  color: var(--rojo);
+  margin-bottom: 0.35rem;
+}
+.glosario__def { color: var(--tinta-suave); font-size: 0.96rem; }
+
+.lista-grande li { font-size: 1.05rem; margin-bottom: 0.8rem; }
+
+/* ============================================================
+   Desktop ≥ 900px
+   ============================================================ */
+@media (min-width: 760px) {
+  .costos { grid-template-columns: repeat(2, 1fr); }
+  .compara { grid-template-columns: repeat(2, 1fr); align-items: start; }
+  .glosario { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .gmm-split { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+  .gmm-split--reverse .gmm-split__media { order: 0; }
+  .gmm-cita { padding: 3rem 2.6rem; }
+}
