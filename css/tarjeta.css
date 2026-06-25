@@ -191,6 +191,35 @@
 .servicio__desc { font-size: 0.8rem; color: var(--tinta-suave); line-height: 1.3; }
 .servicio__flecha { color: var(--rojo); font-weight: 700; flex-shrink: 0; }
 
+/* Servicio destacado (resaltado) */
+.servicio--destacado {
+  background: var(--gradiente-rojo);
+  border-color: transparent;
+  color: var(--blanco);
+  box-shadow: 0 10px 24px rgba(180, 36, 49, 0.30);
+}
+.servicio--destacado:hover, .servicio--destacado:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(180, 36, 49, 0.40);
+  border-color: transparent;
+}
+.servicio--destacado .servicio__icono { background: rgba(255, 255, 255, 0.18); }
+.servicio--destacado .servicio__desc { color: rgba(255, 255, 255, 0.88); }
+.servicio--destacado .servicio__flecha { color: var(--blanco); }
+.servicio__badge {
+  display: inline-block;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--blanco);
+  color: var(--rojo);
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+}
+
 /* ---------- CTA principal ---------- */
 .tarjeta__cta { padding: 1.6rem 1.5rem 0.6rem; }
 .tarjeta__cta .btn { font-size: 1rem; }

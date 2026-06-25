@@ -432,6 +432,72 @@ h1, h2, h3 { font-family: var(--fuente-titulos); font-weight: 600; line-height: 
 }
 .card__cta:hover { color: var(--rojo-oscuro); transform: translateX(4px); }
 
+/* ============ Banner destacado: Calcula tu retiro ============ */
+.calc-banner {
+  margin-top: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.8rem 2rem;
+  border-radius: var(--radio);
+  background: var(--gradiente-rojo);
+  color: var(--blanco);
+  box-shadow: var(--sombra-hover);
+  position: relative;
+  overflow: hidden;
+}
+.calc-banner::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
+  pointer-events: none;
+}
+.calc-banner__icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: grid;
+  place-items: center;
+  font-size: 1.9rem;
+}
+.calc-banner__text { flex: 1; min-width: 0; position: relative; }
+.calc-banner__kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 0.3rem;
+}
+.calc-banner__title {
+  font-family: var(--fuente-titulos);
+  color: var(--blanco);
+  font-size: 1.6rem;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+.calc-banner__desc { font-size: 0.95rem; opacity: 0.95; max-width: 56ch; }
+.calc-banner__cta {
+  flex-shrink: 0;
+  background: var(--blanco);
+  color: var(--rojo) !important;
+  box-shadow: 0 8px 22px rgba(45, 42, 38, 0.18);
+}
+.calc-banner__cta:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(45, 42, 38, 0.24); }
+
+@media (max-width: 640px) {
+  .calc-banner { flex-direction: column; text-align: center; padding: 1.8rem 1.4rem; }
+  .calc-banner__desc { margin-inline: auto; }
+  .calc-banner__cta { width: 100%; }
+}
+
 /* ============ Pasos ============ */
 .pasos { list-style: none; display: grid; gap: 1.5rem; }
 .paso {
