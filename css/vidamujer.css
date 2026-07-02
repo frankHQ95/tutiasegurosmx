@@ -72,6 +72,177 @@
   opacity: 0.85;
 }
 
+/* ============================================================
+   Cotizador Vida Mujer (2 pasos: formulario + resultados)
+   Mecánica fiel al manual: 5% cada 2 años (años 5-17) + 80% año 20 = 115%
+   ============================================================ */
+.cotz {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.8rem 1.4rem;
+  box-shadow: var(--sombra-hover);
+  margin: 0 0 2rem;
+}
+.cotz__head { text-align: center; margin-bottom: 1.8rem; }
+.cotz__kicker {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--rojo); margin-bottom: 0.5rem;
+}
+.cotz__title { font-family: var(--fuente-titulos); font-size: 1.7rem; line-height: 1.12; margin-bottom: 0.5rem; }
+.cotz__title em { font-style: italic; color: var(--rojo); }
+.cotz__sub { color: var(--tinta-suave); font-size: 0.95rem; max-width: 52ch; margin: 0 auto; }
+
+/* Ocultar el paso inactivo (gana specificity al display:flex) */
+.cotz__form[hidden], .cotz__results[hidden] { display: none; }
+
+/* ---- Paso 1: formulario ---- */
+.cotz__form { display: flex; flex-direction: column; gap: 1.4rem; }
+.cotz__field { display: flex; flex-direction: column; gap: 0.6rem; }
+.cotz__field > label { font-weight: 600; }
+.cotz__field > label span { font-weight: 400; color: var(--tinta-suave); font-size: 0.88em; }
+.cotz__fhead { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.cotz__fhead label { font-weight: 600; }
+.cotz__fhead label span { display: block; font-weight: 400; color: var(--tinta-suave); font-size: 0.8rem; }
+.cotz__disp {
+  font-family: var(--fuente-titulos); font-size: 1.3rem; font-weight: 600;
+  color: var(--rojo); white-space: nowrap;
+}
+.cotz__text {
+  border: 1px solid var(--borde); background: var(--crema);
+  border-radius: 12px; padding: 0.8rem 1rem; font-size: 1rem; color: var(--tinta);
+  outline: none; transition: border-color 0.2s ease;
+}
+.cotz__text:focus { border-color: var(--rojo); }
+.cotz__rlabels { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--tinta-suave); }
+
+.cotz input[type="range"] {
+  -webkit-appearance: none; appearance: none; width: 100%; height: 8px;
+  border-radius: 999px; outline: none;
+  background: linear-gradient(90deg, var(--rojo) 0%, var(--rojo) var(--pct, 50%), var(--rojo-suave) var(--pct, 50%), var(--rojo-suave) 100%);
+}
+.cotz input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 26px; height: 26px;
+  border-radius: 50%; background: var(--rojo); border: 3px solid var(--blanco);
+  box-shadow: var(--sombra); cursor: pointer;
+}
+.cotz input[type="range"]::-moz-range-thumb {
+  width: 26px; height: 26px; border-radius: 50%; background: var(--rojo);
+  border: 3px solid var(--blanco); box-shadow: var(--sombra); cursor: pointer;
+}
+.cotz__banner {
+  display: flex; gap: 0.7rem; align-items: flex-start;
+  background: var(--rojo-suave); border-radius: 12px; padding: 0.9rem 1.1rem;
+  font-size: 0.9rem; color: var(--tinta);
+}
+.cotz__banner strong { color: var(--rojo); }
+.cotz__eq { font-size: 0.85rem; color: var(--tinta-suave); font-weight: 600; margin: 0.2rem 0 0; }
+
+/* Suma asegurada calculada */
+.cotz__sa {
+  text-align: center; background: var(--crema); border: 1px solid var(--borde);
+  border-radius: var(--radio); padding: 1.5rem 1.2rem; margin-bottom: 1.4rem;
+}
+.cotz__sa-label { display: block; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tinta-suave); margin-bottom: 0.2rem; }
+.cotz__sa-val { display: block; font-family: var(--fuente-titulos); font-size: 2.3rem; font-weight: 600; color: var(--rojo); line-height: 1.1; }
+.cotz__sa-udis { display: block; font-size: 0.92rem; color: var(--tinta-suave); font-weight: 600; margin-top: 0.15rem; }
+.cotz__sa-note { display: block; font-size: 0.8rem; color: var(--rojo); margin-top: 0.7rem; max-width: 46ch; margin-inline: auto; }
+.cotz__sa-note[hidden] { display: none; }
+
+/* Monto secundario en UDIS dentro de las tarjetas */
+.cotz__u { font-size: 0.66em; color: var(--tinta-suave); font-weight: 500; white-space: nowrap; }
+.cotz__tl-card--mat .cotz__u { color: rgba(255, 255, 255, 0.85); }
+
+/* ---- Paso 2: resultados ---- */
+.cotz__results { animation: fadeUp 0.5s var(--transicion-suave) both; }
+.cotz__rhead { text-align: center; margin-bottom: 1.2rem; }
+.cotz__rtitle { font-family: var(--fuente-titulos); font-size: 1.5rem; color: var(--rojo); margin-bottom: 0.3rem; }
+.cotz__rsub { color: var(--tinta-suave); font-size: 0.95rem; }
+.cotz__rsub strong { color: var(--tinta); }
+.cotz__summary {
+  background: var(--gradiente-rojo); color: var(--blanco);
+  border-radius: var(--radio); padding: 1.3rem 1.4rem; text-align: center;
+  font-size: 1.05rem; line-height: 1.5; margin-bottom: 1.8rem;
+}
+.cotz__summary strong { font-weight: 700; }
+
+/* Timeline de dotes */
+.cotz__tl-title {
+  font-weight: 700; font-size: 0.95rem; display: flex; align-items: center;
+  gap: 0.5rem; margin-bottom: 1.2rem;
+}
+.cotz__timeline { position: relative; padding-left: 8px; margin-bottom: 2rem; }
+.cotz__timeline::before {
+  content: ""; position: absolute; left: 19px; top: 6px; bottom: 6px;
+  width: 2px; background: var(--borde);
+}
+.cotz__tl-row { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+.cotz__tl-node {
+  flex: none; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--rojo); color: var(--blanco); display: grid; place-items: center;
+  font-weight: 700; font-size: 0.95rem; position: relative; z-index: 1;
+  box-shadow: 0 0 0 4px var(--hueso);
+}
+.cotz__tl-node--mat { background: var(--gradiente-rojo); font-size: 1.1rem; }
+.cotz__tl-card {
+  flex: 1; min-width: 0; background: var(--crema); border: 1px solid var(--borde);
+  border-radius: 14px; padding: 0.9rem 1.1rem;
+}
+.cotz__tl-card--mat {
+  background: var(--gradiente-rojo); color: var(--blanco); border-color: transparent;
+}
+.cotz__tl-h { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin-bottom: 0.3rem; }
+.cotz__tl-year { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-suave); }
+.cotz__tl-card--mat .cotz__tl-year { color: rgba(255,255,255,0.85); }
+.cotz__tl-pct {
+  font-size: 0.72rem; font-weight: 700; background: var(--rojo); color: var(--blanco);
+  border-radius: 999px; padding: 0.1rem 0.55rem;
+}
+.cotz__tl-card--mat .cotz__tl-pct { background: var(--blanco); color: var(--rojo); }
+.cotz__tl-amt { font-family: var(--fuente-titulos); font-size: 1.5rem; font-weight: 600; line-height: 1.1; }
+.cotz__tl-ctx { font-size: 0.85rem; color: var(--tinta-suave); margin-top: 0.2rem; }
+.cotz__tl-card--mat .cotz__tl-ctx { color: rgba(255,255,255,0.9); }
+
+/* Comparativa */
+.cotz__compare { display: grid; gap: 1rem; margin-bottom: 1.8rem; }
+.cotz__cc { display: flex; gap: 0.9rem; align-items: flex-start; border-radius: 14px; padding: 1.1rem 1.2rem; }
+.cotz__cc--lose { background: var(--crema); border: 1px solid var(--borde); }
+.cotz__cc--win { background: var(--blanco); border: 2px solid var(--rojo); box-shadow: var(--sombra); }
+.cotz__cc-ic { font-size: 1.6rem; flex: none; }
+.cotz__cc-label { display: block; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-suave); }
+.cotz__cc-val { display: block; font-family: var(--fuente-titulos); font-size: 1.5rem; font-weight: 600; line-height: 1.1; margin: 0.15rem 0; }
+.cotz__cc--win .cotz__cc-val { color: var(--rojo); }
+.cotz__cc-note { display: block; font-size: 0.82rem; color: var(--tinta-suave); }
+.cotz__cc-note strong { color: var(--rojo); }
+
+/* Protección incluida */
+.cotz__prot { background: var(--crema); border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.4rem; margin-bottom: 1.6rem; }
+.cotz__prot-title { font-weight: 700; margin-bottom: 1rem; }
+.cotz__prot-grid { display: grid; gap: 0.9rem; }
+.cotz__prot-item { display: flex; gap: 0.7rem; align-items: flex-start; }
+.cotz__prot-item > span { font-size: 1.3rem; flex: none; }
+.cotz__prot-item strong { display: block; font-size: 0.95rem; }
+.cotz__prot-item div span { font-size: 0.84rem; color: var(--tinta-suave); }
+.cotz__prot-item div span strong { display: inline; color: var(--rojo); font-size: 1em; }
+
+.cotz__disclaimer {
+  display: flex; gap: 0.6rem; align-items: flex-start;
+  font-size: 0.78rem; color: var(--tinta-suave); opacity: 0.9; margin-bottom: 1.4rem;
+}
+.cotz__disclaimer > span:first-child { color: var(--rojo); font-weight: 700; }
+.cotz__actions { display: flex; flex-direction: column; gap: 0.8rem; }
+.cotz__actions .btn { width: 100%; }
+
+@media (min-width: 640px) {
+  .cotz__compare { grid-template-columns: repeat(2, 1fr); align-items: stretch; }
+  .cotz__prot-grid { grid-template-columns: repeat(2, 1fr); }
+  .cotz__actions { flex-direction: row-reverse; justify-content: flex-start; }
+  .cotz__actions .btn { width: auto; }
+}
+@media (min-width: 760px) {
+  .cotz { padding: 2.4rem 2.2rem; }
+}
+
 /* ---------- Salud femenina ---------- */
 .salud__grid { display: grid; gap: 2.5rem; align-items: center; }
 .salud__content > p { color: var(--tinta-suave); margin-bottom: 1.4rem; }
