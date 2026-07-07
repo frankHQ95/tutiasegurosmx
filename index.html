@@ -9,7 +9,7 @@
   <!-- Open Graph (compartir en WhatsApp / redes) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Protege hoy el estilo de vida que tanto te costó construir">
-  <meta property="og:description" content="Seguros, ahorro e inversión diseñados para mujeres. Agenda tu asesoría personalizada con Flor Armenta, asesora de Seguros Monterrey New York Life.">
+  <meta property="og:description" content="Seguros, ahorro e inversión diseñados para mujeres. Agenda tu asesoría personalizada con Flor Armenta, asesora financiera para mujeres.">
   <meta property="og:image" content="assets/img/flor-hero.jpg">
   <meta property="og:locale" content="es_MX">
   <!-- TODO: pendiente clienta — actualizar og:url cuando se defina el dominio -->
@@ -20,6 +20,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Calendly (pop-up de agenda) -->
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
   <!-- Meta Pixel (Facebook Ads) -->
   <!-- TODO: pendiente clienta — sustituir TU_PIXEL_ID y descomentar
@@ -41,7 +45,7 @@
     "@type": "InsuranceAgency",
     "name": "tutiasegurosmx",
     "founder": { "@type": "Person", "name": "Flor de María Armenta Osuna" },
-    "description": "Asesoría en seguros, ahorro e inversión para mujeres. Asesora de Seguros Monterrey New York Life.",
+    "description": "Asesoría en seguros, ahorro e inversión para mujeres.",
     "email": "florsegurosmonterrey@gmail.com",
     "telephone": "+52 644 114 0495",
     "areaServed": "MX",
@@ -67,7 +71,7 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#faq">Preguntas</a>
       </nav>
-      <a href="#contacto" class="btn btn--primary btn--sm header__cta">Agendar asesoría</a>
+      <a href="#contacto" class="btn btn--primary btn--sm header__cta" data-calendly>Agendar asesoría</a>
       <button class="header__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -85,7 +89,7 @@
           <h1 class="hero__title">Protege hoy el <em class="resaltado">estilo de vida</em> que tanto te costó construir</h1>
           <p class="hero__subtitle">Seguros, ahorro e inversión diseñados para mujeres que quieren vivir con tranquilidad hoy y disfrutar de libertad financiera mañana.</p>
           <div class="hero__actions">
-            <a href="#contacto" class="btn btn--primary" data-track="Lead">Agenda tu asesoría personalizada</a>
+            <a href="#contacto" class="btn btn--primary" data-track="Lead" data-calendly>Agenda tu asesoría personalizada</a>
             <a href="https://wa.me/526441140495?text=Hola%20Flor%2C%20vengo%20de%20tu%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n%20sobre%20mis%20opciones%20de%20protecci%C3%B3n%20y%20ahorro."
                class="btn btn--ghost" target="_blank" rel="noopener" data-track="Contact">Escríbeme por WhatsApp</a>
           </div>
@@ -239,17 +243,17 @@
     <section class="section section--cream" id="sobre-mi">
       <div class="container sobre__grid">
         <figure class="sobre__media">
-          <img src="assets/img/flor-sobre-mi.jpg" alt="Flor Armenta consultando su agenda de Seguros Monterrey" width="660" height="990" loading="lazy">
+          <img src="assets/img/flor-sobre-mi.jpg" alt="Flor Armenta, asesora financiera para mujeres, consultando su agenda" width="660" height="990" loading="lazy">
         </figure>
         <div class="sobre__content">
           <p class="section__kicker">Tu asesora</p>
           <h2 class="section__title">Hola, soy Flor Armenta</h2>
           <p>Soy especialista en estrategias financieras para mujeres que desean <strong>proteger su patrimonio, hacer crecer su dinero y asegurar su futuro</strong>.</p>
           <p>Sé lo que cuesta construir lo que tienes: los desvelos, los sacrificios, las ganas de salir adelante. Por eso mi trabajo es que nada de eso quede desprotegido — y que tu dinero empiece a trabajar tan duro como tú.</p>
-          <p>Como asesora de <strong>Seguros Monterrey New York Life</strong>, convierto la planeación financiera en un proceso simple, claro y accesible. Mi promesa es asesorarte como me gustaría que asesoraran a las mujeres de mi familia.</p>
+          <p>Como <strong>asesora financiera especializada en mujeres</strong>, convierto la planeación financiera en un proceso simple, claro y accesible. Mi promesa es asesorarte como me gustaría que asesoraran a las mujeres de mi familia.</p>
           <!-- TODO: pendiente clienta — validar/completar bio con credenciales reales (cédula, certificaciones, trayectoria) -->
           <ul class="sobre__badges">
-            <li>Asesora profesional Seguros Monterrey New York Life</li>
+            <li>Asesora financiera profesional certificada</li>
             <li>Especialista en planeación financiera para mujeres</li>
           </ul>
           <a href="#contacto" class="btn btn--primary">Platica conmigo</a>
@@ -258,23 +262,22 @@
     </section>
 
     <!-- ============ 7 · TESTIMONIOS ============ -->
-    <!-- TODO: pendiente clienta — sustituir los 3 testimonios placeholder por reales (nombre, texto, ciudad) -->
     <section class="section" id="testimonios">
       <div class="container">
         <p class="section__kicker">Clientas reales</p>
         <h2 class="section__title">Mujeres que ya tomaron el control de su futuro</h2>
         <div class="cards cards--3">
           <blockquote class="testimonio">
-            <p>“[Testimonio pendiente — texto real de clienta]”</p>
-            <footer><strong>Nombre Apellido</strong><span>Ciudad</span></footer>
+            <p>“Siempre me preocupó mi futuro, pero no quería tomar una decisión apresurada sobre un plan de retiro. Desde el primer momento, Flor me explicó todo con claridad, resolvió cada una de mis dudas y, lo más importante, en vez de sentir que alguien solo me está vendiendo un servicio, ella me ayudó a encontrar un plan que se ajustara a mis necesidades y posibilidades, lo que me dio mucha confianza. Ya casi cumplo 3 años con mi plan de retiro y me da mucha tranquilidad saber que estoy construyendo mi patrimonio para el futuro. Sin duda, recomiendo a Flor por su profesionalismo, honestidad y excelente atención.”</p>
+            <footer><strong>Lupita Félix</strong><span>Plan de Retiro</span></footer>
           </blockquote>
           <blockquote class="testimonio">
-            <p>“[Testimonio pendiente — texto real de clienta]”</p>
-            <footer><strong>Nombre Apellido</strong><span>Ciudad</span></footer>
+            <p>“Desde el primer momento Flor me explicó todo de manera muy clara, resolvió todas mis dudas y me ayudó a encontrar el seguro que realmente se adaptaba a mis necesidades. Hace dos años contraté mi seguro con ella y ha sido una excelente decisión. Siempre ha estado disponible para orientarme cuando lo he necesitado y su atención ha sido muy profesional, amable y confiable. Sin duda la recomendaría a cualquier persona que busque asesoría honesta y un excelente servicio. 🫰🏻”</p>
+            <footer><strong>Ana Lucía Hurtado</strong><span>Seguro de Vida</span></footer>
           </blockquote>
           <blockquote class="testimonio">
-            <p>“[Testimonio pendiente — texto real de clienta]”</p>
-            <footer><strong>Nombre Apellido</strong><span>Ciudad</span></footer>
+            <p>“Te amo por llegar a mi vida 💖 y estar protegida. Aunque aún sé que me faltan cosas que podemos ver para un futuro, aún así me siento más tranquila gracias a ti y tu asesoría 🙌🏼”</p>
+            <footer><strong>Nuvia Valdez</strong><span>Clienta</span></footer>
           </blockquote>
         </div>
       </div>
@@ -325,9 +328,8 @@
             <li>Por videollamada o presencial, como prefieras</li>
             <li>Tus datos están seguros: jamás los comparto</li>
           </ul>
-          <!-- TODO: pendiente clienta — sustituir por link real de Calendly -->
           <p class="contacto__alt">¿Prefieres elegir fecha y hora ahora mismo?<br>
-            <a href="#" class="contacto__calendly" data-calendly>Agenda directo en mi calendario →</a>
+            <a href="https://calendly.com/florsegurosmonterrey/asesoria-gratuita" class="contacto__calendly" data-calendly>Agenda directo en mi calendario →</a>
           </p>
         </div>
         <form class="form" id="leadForm" novalidate>
@@ -385,7 +387,7 @@
       </div>
     </div>
     <div class="container footer__legal">
-      <p>Este sitio es informativo y no constituye una oferta ni garantía de contratación. Los productos mencionados son emitidos por Seguros Monterrey New York Life, S.A. de C.V. y están sujetos a sus condiciones generales. Los rendimientos y beneficios fiscales dependen de cada plan y perfil.</p>
+      <p>Este sitio es informativo y no constituye una oferta ni garantía de contratación. Los productos mencionados son emitidos por las aseguradoras correspondientes y están sujetos a sus condiciones generales. Los rendimientos y beneficios fiscales dependen de cada plan y perfil.</p>
       <p>© 2026 tutiasegurosmx · Hecho por <a href="https://ikigaiasesores.vercel.app" target="_blank" rel="noopener">Ikigai Asesores</a></p>
     </div>
   </footer>

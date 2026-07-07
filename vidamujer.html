@@ -22,6 +22,10 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/vidamujer.css">
 
+  <!-- Calendly (pop-up de agenda) -->
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
   <!-- Meta Pixel (Facebook Ads) -->
   <!-- TODO: pendiente clienta — sustituir TU_PIXEL_ID y descomentar.
        En esta página además de PageView conviene disparar:
@@ -69,7 +73,7 @@
             <li>Diseñado para la salud y los momentos de la mujer</li>
             <li>Empiezas sin exámenes médicos complicados</li>
           </ul>
-          <p class="hero__trust">Un producto de <strong>Seguros Monterrey New York Life</strong>, contigo de la mano de Flor Armenta</p>
+          <p class="hero__trust">Con el respaldo de una aseguradora líder, contigo de la mano de Flor Armenta</p>
         </div>
         <figure class="hero__media">
           <div class="hero__media-frame" aria-hidden="true"></div>
@@ -148,7 +152,7 @@
           <div class="cotz__head">
             <p class="cotz__kicker">Simulador Vida Mujer</p>
             <h3 class="cotz__title">Simula tu plan en <em>10 segundos</em></h3>
-            <p class="cotz__sub">Dinos tu edad y cuánto podrías aportar al mes. Con las tarifas reales de Seguros Monterrey calculamos tu suma asegurada y cómo tu plan te va entregando dinero durante 20 años.</p>
+            <p class="cotz__sub">Dinos tu edad y cuánto podrías aportar al mes. Con tarifas reales calculamos tu suma asegurada y cómo tu plan te va entregando dinero durante 20 años.</p>
           </div>
 
           <!-- PASO 1 · FORMULARIO -->
@@ -226,7 +230,7 @@
               </div>
             </div>
 
-            <!-- Protección incluida (coberturas reales del estudio SMNYL) -->
+            <!-- Protección incluida (coberturas reales del producto) -->
             <div class="cotz__prot">
               <p class="cotz__prot-title">🛡️ Protección incluida en tu plan</p>
               <div class="cotz__prot-grid">
@@ -241,7 +245,7 @@
 
             <div class="cotz__disclaimer">
               <span aria-hidden="true">ⓘ</span>
-              <span>Proyección ilustrativa basada en tarifas reales de Seguros Monterrey New York Life (Vida Mujer en UDIS, mujer no fumadora, plazo 20 años, suma asegurada mínima 35,000 UDIS) interpoladas por edad. Las entregas son 5% de la suma asegurada cada 2 años del año 5 al 17 + 80% al año 20 = 115%. Montos en pesos al valor de la UDI de hoy; en tu plan real se ajustan con la inflación. No es una cotización oficial — la exacta se emite en tu asesoría.</span>
+              <span>Proyección ilustrativa basada en tarifas reales (Vida Mujer en UDIS, mujer no fumadora, plazo 20 años, suma asegurada mínima 35,000 UDIS) interpoladas por edad. Las entregas son 5% de la suma asegurada cada 2 años del año 5 al 17 + 80% al año 20 = 115%. Montos en pesos al valor de la UDI de hoy; en tu plan real se ajustan con la inflación. No es una cotización oficial — la exacta se emite en tu asesoría.</span>
             </div>
 
             <div class="cotz__actions">
@@ -387,9 +391,8 @@
             <li>Te llevas tu propuesta personalizada, decidas lo que decidas</li>
             <li>Tus datos están seguros: jamás los comparto</li>
           </ul>
-          <!-- TODO: pendiente clienta — sustituir por link real de Calendly -->
           <p class="contacto__alt">¿Prefieres elegir fecha y hora ahora mismo?<br>
-            <a href="#" class="contacto__calendly" data-calendly>Agenda directo en mi calendario →</a>
+            <a href="https://calendly.com/florsegurosmonterrey/asesoria-gratuita" class="contacto__calendly" data-calendly>Agenda directo en mi calendario →</a>
           </p>
         </div>
         <form class="form" id="leadForm" novalidate>
@@ -446,7 +449,7 @@
       </div>
     </div>
     <div class="container footer__legal">
-      <p>Vida Mujer® es un producto de Seguros Monterrey New York Life, S.A. de C.V. Esta página es informativa y no constituye una oferta ni garantía de contratación. Las coberturas, porcentajes, edades de contratación y beneficios descritos son ilustrativos y están sujetos a las Condiciones Generales del producto y a las políticas de suscripción de la aseguradora.</p>
+      <p>Vida Mujer® es un producto emitido por la aseguradora correspondiente. Esta página es informativa y no constituye una oferta ni garantía de contratación. Las coberturas, porcentajes, edades de contratación y beneficios descritos son ilustrativos y están sujetos a las Condiciones Generales del producto y a las políticas de suscripción de la aseguradora.</p>
       <p>© 2026 tutiasegurosmx · Hecho por <a href="https://ikigaiasesores.vercel.app" target="_blank" rel="noopener">Ikigai Asesores</a></p>
     </div>
   </footer>
@@ -461,7 +464,7 @@
 
   <script src="js/main.js" defer></script>
 
-  <!-- Cotizador Vida Mujer (tarifas reales SMNYL en UDIS + UDI diaria) -->
+  <!-- Cotizador Vida Mujer (tarifas reales en UDIS + UDI diaria) -->
   <script>
     (function () {
       var form = document.getElementById('cotzForm');
@@ -473,7 +476,7 @@
       var aportDisp= document.getElementById('cotzAportDisp');
       var aportEq  = document.getElementById('cotzAportEq');
 
-      // Tarifas reales SMNYL (Vida Mujer UDI, mujer no fumadora, 20 años):
+      // Tarifas reales (Vida Mujer UDI, mujer no fumadora, 20 años):
       // Prima Total Anual en UDIS para una Suma Asegurada de 35,000 UDIS, por edad.
       var SA_REF = 35000;          // suma asegurada de referencia (mínima del plan)
       var SA_MIN = 35000;          // piso permitido por el plan

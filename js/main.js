@@ -144,14 +144,23 @@ form.addEventListener('submit', (e) => {
   window.open(`https://wa.me/526441140495?text=${mensaje}`, '_blank', 'noopener');
 });
 
-// ---------- Calendly ----------
-// TODO: pendiente clienta — al recibir el link real, sustituir el href del
-// elemento [data-calendly] en index.html y eliminar este aviso temporal.
-const calendlyLink = document.querySelector('[data-calendly]');
-if (calendlyLink && calendlyLink.getAttribute('href') === '#') {
-  calendlyLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.getElementById('leadForm').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
-    trackEvent('Schedule');
-  });
+// ---------- Calendly (pop-up dentro de la página) ----------
+const CALENDLY_URL = 'https://calendly.com/florsegurosmonterrey/asesoria-gratuita';
+
+function abrirCalendly() {
+  trackEvent('Schedule');
+  if (window.Calendly && typeof Calendly.initPopupWidget === 'function') {
+    Calendly.initPopupWidget({ url: CALENDLY_URL });
+    return false;
+  }
+  // Fallback: si el widget no cargó, abrir en pestaña nueva.
+  window.open(CALENDLY_URL, '_blank', 'noopener');
+  return false;
 }
+
+document.querySelectorAll('[data-calendly]').forEach((el) => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    abrirCalendly();
+  });
+});
