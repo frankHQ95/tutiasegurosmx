@@ -26,11 +26,37 @@
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-  <!-- Meta Pixel (Facebook Ads) -->
-  <!-- TODO: pendiente clienta — sustituir TU_PIXEL_ID y descomentar.
-       En esta página además de PageView conviene disparar:
-       fbq('track', 'ViewContent', { content_name: 'Vida Mujer' });
-  -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    // Dos pixeles en esta página:
+    //   1047820914364103 → pixel general del sitio (todas las páginas)
+    //   2183525309239012 → pixel dedicado a la campaña de Vida Mujer
+    // Se usa trackSingle para mandar cada evento a un pixel concreto y que
+    // ninguno reciba eventos por accidente (fbq('track') se los manda a todos).
+    fbq('init', '1047820914364103');
+    fbq('init', '2183525309239012');
+
+    fbq('trackSingle', '1047820914364103', 'PageView');
+    fbq('trackSingle', '2183525309239012', 'PageView');
+
+    fbq('trackSingle', '1047820914364103', 'ViewContent', { content_name: 'Vida Mujer' });
+    fbq('trackSingle', '2183525309239012', 'ViewContent', { content_name: 'Vida Mujer' });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1047820914364103&ev=PageView&noscript=1" alt="" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2183525309239012&ev=PageView&noscript=1" alt="" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -68,6 +94,11 @@
             <a href="https://wa.me/526441140495?text=Hola%20Flor%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Vida%20Mujer%20%F0%9F%92%97"
                class="btn btn--ghost" target="_blank" rel="noopener" data-track="Contact">Pregúntame por WhatsApp</a>
           </div>
+          <!-- Cifra real de capacidad semanal de Flor — se configura en js/main.js → AGENDA -->
+          <p class="disponibilidad" data-disponibilidad>
+            <span class="disponibilidad__punto" aria-hidden="true"></span>
+            <span data-disponibilidad-texto></span>
+          </p>
           <ul class="hero__checks">
             <li>Recibes dinero en vida, no solo "por si algo pasa"</li>
             <li>Diseñado para la salud y los momentos de la mujer</li>
@@ -248,6 +279,15 @@
               <span>Proyección ilustrativa basada en tarifas reales (Vida Mujer en UDIS, mujer no fumadora, plazo 20 años, suma asegurada mínima 35,000 UDIS) interpoladas por edad. Las entregas son 5% de la suma asegurada cada 2 años del año 5 al 17 + 80% al año 20 = 115%. Montos en pesos al valor de la UDI de hoy; en tu plan real se ajustan con la inflación. No es una cotización oficial — la exacta se emite en tu asesoría.</span>
             </div>
 
+            <!-- Urgencia real del producto: la prima se fija con tu edad y hay tope a los 55 -->
+            <div class="urgencia urgencia--cream" style="margin-top:1.25rem;">
+              <svg class="urgencia__icono" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+              <div>
+                <p class="urgencia__titulo">Tu edad de hoy es la que se queda en tu plan</p>
+                <p class="urgencia__texto">La aportación de Vida Mujer se calcula con la edad que tienes al contratarlo y ya no cambia por cumplir años. Vuelve a correr el cálculo con un año más y vas a ver la diferencia. Además el plan solo se puede contratar <strong>hasta los 55 años</strong>: después de esa edad esta puerta se cierra.</p>
+              </div>
+            </div>
+
             <div class="cotz__actions">
               <button class="btn btn--ghost" type="button" id="cotzReset">Hacer otro cálculo</button>
               <a class="btn btn--primary" href="#contacto" id="cotzCta" data-track="Lead">Quiero mi cotización oficial</a>
@@ -394,6 +434,10 @@
           <p class="contacto__alt">¿Prefieres elegir fecha y hora ahora mismo?<br>
             <a href="https://calendly.com/florsegurosmonterrey/asesoria-gratuita" class="contacto__calendly" data-calendly>Agenda directo en mi calendario →</a>
           </p>
+          <p class="disponibilidad" data-disponibilidad>
+            <span class="disponibilidad__punto" aria-hidden="true"></span>
+            <span data-disponibilidad-texto></span>
+          </p>
         </div>
         <form class="form" id="leadForm" novalidate>
           <h3 class="form__title">Quiero conocer Vida Mujer</h3>
@@ -462,6 +506,17 @@
     </svg>
   </a>
 
+  <!-- Notificación extra de esta página. Solo datos ciertos del producto. -->
+  <script>
+    window.NOTIF_PAGINA = [
+      {
+        dato: true,
+        icono: '🎂',
+        nombre: 'Vida Mujer se contrata hasta los 55 años',
+        texto: 'Tu aportación se fija con la edad que tienes al empezar y ya no sube por cumplir años.'
+      }
+    ];
+  </script>
   <script src="js/main.js" defer></script>
 
   <!-- Cotizador Vida Mujer (tarifas reales en UDIS + UDI diaria) -->

@@ -164,3 +164,180 @@ document.querySelectorAll('[data-calendly]').forEach((el) => {
     abrirCalendly();
   });
 });
+
+// ---------- Disponibilidad de agenda ----------
+// ⚠️ IMPORTANTE: este número debe reflejar la capacidad REAL de Flor.
+// Es publicidad de un servicio financiero regulado (PROFECO / CONDUSEF):
+// anunciar una escasez que no existe es publicidad engañosa.
+// Flor actualiza `lugares` cada semana con los espacios que de verdad
+// le quedan libres en Calendly. Si no quiere mantenerlo, poner `mostrar: false`
+// y los bloques de disponibilidad desaparecen solos de todas las páginas.
+const AGENDA = {
+  mostrar: true,
+  lugares: 6,          // TODO: pendiente clienta — confirmar capacidad real semanal
+  periodo: 'esta semana'
+};
+
+const bloquesDisponibilidad = document.querySelectorAll('[data-disponibilidad]');
+
+if (bloquesDisponibilidad.length) {
+  if (!AGENDA.mostrar || !AGENDA.lugares || AGENDA.lugares < 1) {
+    // Sin dato confiable no se muestra nada: mejor sin urgencia que con una cifra falsa.
+    bloquesDisponibilidad.forEach((el) => el.remove());
+  } else {
+    const plural = AGENDA.lugares === 1 ? 'lugar disponible' : 'lugares disponibles';
+    bloquesDisponibilidad.forEach((el) => {
+      const destino = el.querySelector('[data-disponibilidad-texto]') || el;
+      destino.innerHTML =
+        `Agenda de ${AGENDA.periodo}: <strong>${AGENDA.lugares} ${plural}</strong>`;
+    });
+  }
+}
+
+// ---------- Notificaciones flotantes (prueba social) ----------
+// ⚠️ REGLA DE ESTE BLOQUE: aquí solo entra contenido VERIFICABLE.
+// Flor es asesora con cédula ante la CNSF; simular actividad que no
+// ocurrió (nombres, ciudades o agendas inventadas) es publicidad
+// engañosa (art. 32 LFPC) y la expone a ella, no a la agencia.
+//
+// Qué sí puede ir:
+//   · testimonios reales de clientas que dieron su permiso (los mismos
+//     que aparecen en la sección de reseñas, recortados)
+//   · datos ciertos del servicio (primera asesoría sin costo, topes de
+//     edad del producto, disponibilidad real de agenda)
+//
+// Para sumar una clienta nueva: pedir su autorización, agregarla abajo
+// con su cita textual y listo. Si algún día hay datos reales de agendas
+// (API de Calendly o registro que Flor lleve), se pueden inyectar aquí
+// con el mismo formato y las notificaciones pasan a ser en vivo.
+
+const TESTIMONIOS_NOTIF = [
+  {
+    iniciales: 'LF',
+    nombre: 'Lupita Félix',
+    texto: '“Ya casi cumplo 3 años con mi plan de retiro y me da mucha tranquilidad.”',
+    meta: 'Clienta · Plan de Retiro'
+  },
+  {
+    iniciales: 'AH',
+    nombre: 'Ana Lucía Hurtado',
+    texto: '“Hace dos años contraté mi seguro con ella y ha sido una excelente decisión.”',
+    meta: 'Clienta · Seguro de Vida'
+  },
+  {
+    iniciales: 'NV',
+    nombre: 'Nuvia Valdez',
+    texto: '“Me siento más tranquila gracias a ti y tu asesoría.”',
+    meta: 'Clienta'
+  }
+];
+
+const DATOS_NOTIF = [
+  {
+    dato: true,
+    icono: '✓',
+    nombre: 'Primera asesoría sin costo',
+    texto: 'Es una plática para darte claridad. Decidas lo que decidas, no se te cobra.'
+  }
+];
+
+// Cada página puede sumar sus propias notificaciones definiendo
+// window.NOTIF_PAGINA antes de cargar este script.
+const NOTIFICACIONES = []
+  .concat(TESTIMONIOS_NOTIF, DATOS_NOTIF, window.NOTIF_PAGINA || []);
+
+// La disponibilidad solo se anuncia si hay una cifra real configurada.
+if (AGENDA.mostrar && AGENDA.lugares > 0) {
+  NOTIFICACIONES.push({
+    dato: true,
+    icono: '📅',
+    nombre: `Quedan ${AGENDA.lugares} ${AGENDA.lugares === 1 ? 'lugar' : 'lugares'} ${AGENDA.periodo}`,
+    texto: 'Puedes elegir tu día y tu hora directo en el calendario de Flor.'
+  });
+}
+
+(function iniciarNotificaciones() {
+  if (!NOTIFICACIONES.length) return;
+
+  const zona = document.createElement('div');
+  zona.className = 'notif-zona';
+  zona.setAttribute('aria-live', 'polite');
+  zona.setAttribute('aria-label', 'Testimonios de clientas');
+  document.body.appendChild(zona);
+
+  let indice = Math.floor(Math.random() * NOTIFICACIONES.length);
+  let activa = null;
+
+  function ocultar(toast) {
+    if (!toast) return;
+    toast.classList.remove('is-visible');
+    toast.classList.add('is-hiding');
+    setTimeout(() => {
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
+      if (activa === toast) activa = null;
+    }, 380);
+  }
+
+  function mostrar() {
+    if (document.hidden) return;
+
+    const dato = NOTIFICACIONES[indice % NOTIFICACIONES.length];
+    indice++;
+
+    if (activa) ocultar(activa);
+
+    const toast = document.createElement('div');
+    toast.className = 'notif';
+    toast.setAttribute('role', 'status');
+
+    const avatar = document.createElement('div');
+    avatar.className = 'notif__avatar' + (dato.dato ? ' notif__avatar--dato' : '');
+    avatar.setAttribute('aria-hidden', 'true');
+    avatar.textContent = dato.dato ? dato.icono : dato.iniciales;
+
+    const cuerpo = document.createElement('div');
+    cuerpo.className = 'notif__cuerpo';
+
+    const nombre = document.createElement('p');
+    nombre.className = 'notif__nombre';
+    nombre.textContent = dato.nombre;
+
+    const texto = document.createElement('p');
+    texto.className = 'notif__texto';
+    texto.textContent = dato.texto;
+
+    cuerpo.append(nombre, texto);
+
+    if (dato.meta) {
+      const meta = document.createElement('span');
+      meta.className = 'notif__meta';
+      meta.textContent = dato.meta;
+      cuerpo.appendChild(meta);
+    }
+
+    const cerrar = document.createElement('button');
+    cerrar.className = 'notif__cerrar';
+    cerrar.type = 'button';
+    cerrar.setAttribute('aria-label', 'Cerrar notificación');
+    cerrar.innerHTML = '&#x2715;';
+    cerrar.addEventListener('click', () => ocultar(toast));
+
+    toast.append(avatar, cuerpo, cerrar);
+    zona.appendChild(toast);
+    activa = toast;
+
+    // Doble RAF para que el navegador pinte el estado inicial antes de animar
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => toast.classList.add('is-visible'));
+    });
+
+    // Se va sola a los 6 s
+    setTimeout(() => { if (activa === toast) ocultar(toast); }, 6000);
+  }
+
+  // Primera a los 10 s, después cada 20-28 s
+  setTimeout(function ciclo() {
+    mostrar();
+    setTimeout(ciclo, 20000 + Math.floor(Math.random() * 8000));
+  }, 10000);
+}());

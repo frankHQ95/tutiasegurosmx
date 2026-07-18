@@ -25,18 +25,23 @@
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-  <!-- Meta Pixel (Facebook Ads) -->
-  <!-- TODO: pendiente clienta — sustituir TU_PIXEL_ID y descomentar
+  <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'TU_PIXEL_ID');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1047820914364103');
     fbq('track', 'PageView');
   </script>
-  -->
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1047820914364103&ev=PageView&noscript=1"
+    /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <!-- Schema.org: asesora de seguros -->
   <script type="application/ld+json">
@@ -92,6 +97,11 @@
             <a href="https://wa.me/526441140495?text=Hola%20Flor%2C%20vengo%20de%20tu%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n%20sobre%20mis%20opciones%20de%20protecci%C3%B3n%20y%20ahorro."
                class="btn btn--ghost" target="_blank" rel="noopener" data-track="Contact">Escríbeme por WhatsApp</a>
           </div>
+          <!-- Cifra real de capacidad semanal de Flor — se configura en js/main.js → AGENDA -->
+          <p class="disponibilidad" data-disponibilidad>
+            <span class="disponibilidad__punto" aria-hidden="true"></span>
+            <span data-disponibilidad-texto></span>
+          </p>
           <ul class="hero__checks">
             <li>Primera asesoría personalizada y sin compromiso</li>
             <li>Planes a la medida de tu etapa de vida y tu presupuesto</li>
@@ -330,6 +340,19 @@
           <p class="contacto__alt">¿Prefieres elegir fecha y hora ahora mismo?<br>
             <a href="https://calendly.com/florsegurosmonterrey/asesoria-gratuita" class="contacto__calendly" data-calendly>Agenda directo en mi calendario →</a>
           </p>
+          <p class="disponibilidad" data-disponibilidad>
+            <span class="disponibilidad__punto" aria-hidden="true"></span>
+            <span data-disponibilidad-texto></span>
+          </p>
+
+          <!-- Urgencia real: en seguros el precio sí depende de la edad y del estado de salud -->
+          <div class="urgencia" style="margin-top:1.5rem;">
+            <svg class="urgencia__icono" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="urgencia__titulo">Esperar no es gratis</p>
+              <p class="urgencia__texto">En seguros y ahorro, el precio de tu plan se calcula con la edad que tienes al contratarlo: cada cumpleaños encarece la misma protección. Y si tu salud cambia antes de empezar, hay coberturas a las que ya no puedes entrar. Empezar joven y sana siempre sale más barato.</p>
+            </div>
+          </div>
         </div>
         <form class="form" id="leadForm" novalidate>
           <h3 class="form__title">Agenda tu asesoría personalizada</h3>

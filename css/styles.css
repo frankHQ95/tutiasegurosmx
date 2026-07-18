@@ -771,3 +771,195 @@ h1, h2, h3 { font-family: var(--fuente-titulos); font-weight: 600; line-height: 
 @media (min-width: 1200px) {
   .cards--4:not(.cards--productos) { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* ============================================================
+   Urgencia / escasez real
+   Los números que aparecen aquí reflejan la capacidad REAL de
+   agenda de Flor (se configuran en js/main.js → AGENDA).
+   No usar cifras inventadas: es publicidad regulada.
+   ============================================================ */
+
+/* Badge compacto — va en el hero, bajo los CTAs */
+.disponibilidad {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  background: var(--rojo-suave);
+  border: 1px solid rgba(180, 36, 49, 0.18);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--rojo-oscuro);
+  line-height: 1.35;
+}
+.disponibilidad__punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rojo);
+  flex-shrink: 0;
+  position: relative;
+}
+.disponibilidad__punto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--rojo);
+  animation: pulsoDisponible 2s ease-out infinite;
+}
+@keyframes pulsoDisponible {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .disponibilidad__punto::after { animation: none; }
+}
+.disponibilidad strong { font-weight: 700; }
+
+/* Bloque de urgencia — razón real para no posponer */
+.urgencia {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.15rem 1.3rem;
+  border-radius: var(--radio);
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-left: 4px solid var(--rojo);
+  box-shadow: var(--sombra);
+}
+.urgencia__icono {
+  flex-shrink: 0;
+  color: var(--rojo);
+  margin-top: 0.15rem;
+}
+.urgencia__titulo {
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+.urgencia__texto {
+  font-size: 0.94rem;
+  color: var(--tinta-suave);
+  line-height: 1.55;
+}
+.urgencia--cream { background: var(--crema); }
+
+/* Nota de urgencia inline, más ligera */
+.nota-urgencia {
+  font-size: 0.92rem;
+  color: var(--rojo-oscuro);
+  font-weight: 500;
+  margin-top: 0.75rem;
+}
+
+/* ============================================================
+   Notificaciones flotantes (prueba social)
+   ⚠️ El contenido sale de js/main.js → NOTIFICACIONES.
+   Solo se muestran hechos verificables: testimonios reales de
+   clientas (con su nombre y su cita textual) y datos ciertos del
+   servicio. No inventar personas ni actividad: es publicidad de
+   un servicio financiero regulado (PROFECO / CONDUSEF).
+   ============================================================ */
+.notif-zona {
+  position: fixed;
+  left: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  width: min(340px, calc(100vw - 2.2rem));
+}
+
+.notif {
+  pointer-events: auto;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 2.1rem 0.85rem 0.9rem;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(45, 42, 38, 0.16);
+  opacity: 0;
+  transform: translateY(14px) scale(0.97);
+  transition: opacity 0.34s var(--transicion-suave),
+              transform 0.34s var(--transicion-suave);
+}
+.notif.is-visible { opacity: 1; transform: none; }
+.notif.is-hiding  { opacity: 0; transform: translateY(8px) scale(0.98); }
+
+.notif__avatar {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--gradiente-rojo);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.notif__avatar--dato {
+  background: var(--rojo-suave);
+  color: var(--rojo-oscuro);
+  font-size: 1.05rem;
+}
+
+.notif__cuerpo { min-width: 0; }
+.notif__nombre {
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--tinta);
+}
+.notif__texto {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--tinta-suave);
+  margin-top: 0.1rem;
+}
+.notif__meta {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+  color: var(--tinta-suave);
+  opacity: 0.75;
+}
+
+.notif__cerrar {
+  position: absolute;
+  top: 6px; right: 6px;
+  width: 24px; height: 24px;
+  border: 0;
+  background: transparent;
+  color: var(--tinta-suave);
+  font-size: 0.78rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+.notif__cerrar:hover { opacity: 1; background: var(--crema); }
+
+/* En móvil se apoyan abajo, sin tapar el botón de WhatsApp */
+@media (max-width: 560px) {
+  .notif-zona { left: 0.8rem; right: 5rem; bottom: 0.8rem; width: auto; }
+  .notif__texto { font-size: 0.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notif { transition: opacity 0.2s ease; transform: none; }
+  .notif.is-visible { transform: none; }
+  .notif.is-hiding  { transform: none; }
+}
